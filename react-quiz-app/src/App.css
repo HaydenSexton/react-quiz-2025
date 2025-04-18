@@ -1,0 +1,57 @@
+.quiz-app {
+  margin: auto;
+  text-align: start;
+  font-family: Arial, sans-serif;
+}
+
+.question-section {
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.options-section {
+  margin: auto;
+}
+
+.options-section label {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  width: 100%;
+}
+
+.radio-align {
+  background-color: #4CAF50;  display: flex;
+  align-items: start;
+  justify-content: start;
+}
+
+.options-section input[type="radio"] {
+  margin-right: 10px;
+  text-align: start;
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.score-section {
+  margin-top: 20px;
+}
+
+.header, .footer {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+}
