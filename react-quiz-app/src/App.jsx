@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import './App.css';
+import Header from './components/Header';
 import Question from './components/Question';
 import Score from './components/Score';
+import Footer from './components/Footer';
 
 const quizQuestions = [
   {
@@ -16,7 +18,7 @@ const quizQuestions = [
   },
   {
     question: "What does JSX stand for?",
-    options: [      
+    options: [
       "JavaScript",
       "JavaScript XML",
       "Java Styling Extension",
@@ -33,7 +35,77 @@ const quizQuestions = [
       "useContext"
     ],
     answer: "useEffect"
-  },  
+  },
+  {
+    question: "What are the limitations of React?",
+    options: [
+      "It's not SEO-friendly",
+      "Only works with databases",
+      "Cannot be used for mobile apps",
+      "Has no support for reusability"
+    ],
+    answer: "It's not SEO-friendly"
+  },
+  {
+    question: "What is useState() in React?",
+    options: [
+      "A way to connect components to Redux",
+      "A hook for managing side effects",
+      "A built-in React hook to manage state",
+      "A way to define context providers"
+    ],
+    answer: "A built-in React hook to manage state"
+  },
+  {
+    question: "What are keys in React?",
+    options: [
+      "A way to identify uniquely elements in a list",
+      "HTML access keys",
+      "Props used to pass values",
+      "Unique class names for styling"
+    ],
+    answer: "A way to identify uniquely elements in a list"
+  },
+  {
+    question: "What is JSX?",
+    options: [
+      "A templating engine",
+      "A browser extension",
+      "JavaScript XML syntax used in React",
+      "A CSS preprocessor"
+    ],
+    answer: "JavaScript XML syntax used in React"
+  },
+  {
+    question: "What are the differences between functional and class components?",
+    options: [
+      "Only functional components can use state",
+      "Class components are stateless",
+      "Functional components are easier and use hooks, class components use lifecycle methods",
+      "There are no differences"
+    ],
+    answer: "Functional components are easier and use hooks, class components use lifecycle methods"
+  },
+  {
+    question: "What is the virtual DOM?",
+    options: [
+      "A concept where a virtual copy of the DOM is kept in memory",
+      "A database used by React",
+      "An actual browser DOM",
+      "A type of cloud-based DOM"
+    ],
+    answer: "A concept where a virtual copy of the DOM is kept in memory"
+  },
+  {
+    question: "What are props in React?",
+    options: [
+      "Internal state values",
+      "Static assets",
+      "Arguments passed into components",
+      "Special React components"
+    ],
+    answer: "Arguments passed into components"
+  }
 ];
 
 const App = () => {
@@ -68,9 +140,14 @@ const App = () => {
   };
 
   return (
-    <div className="quiz-app">     
+    <div className="quiz-app">
+      <Header />
       {showScore ? (
-        <Score score={score} totalQuestions={quizQuestions.length} handleRestartQuiz={handleRestartQuiz} />
+        <Score
+          score={score}
+          totalQuestions={quizQuestions.length}
+          handleRestartQuiz={handleRestartQuiz}
+        />
       ) : (
         <Question
           questionData={quizQuestions[currentQuestion]}
@@ -81,6 +158,7 @@ const App = () => {
           totalQuestions={quizQuestions.length}
         />
       )}
+      <Footer/>
     </div>
   );
 };
