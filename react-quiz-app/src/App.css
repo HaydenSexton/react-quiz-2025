@@ -53,6 +53,10 @@ button:disabled {
 }
 
 .score-section {
+  margin: 20px auto;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
   margin-top: 20px;
 }
 
